@@ -2,38 +2,37 @@ import styled from 'styled-components'
 
 export const MainChatHeader = styled.div`
   display: flex;
+  height: 10%;
   align-items: center;
   justify-content: space-between;
 
-  height: 10%;
+  position: relative;
 
-  padding: 1rem 1rem;
-
-  border-radius: 2rem;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  padding: 0 ${props => props.theme.spacing.padding.M};
+  border-radius: ${props => props.theme.spacing.border_radius.L};
 
   background-color: ${props => props.theme.colors['background-2']};
-  background: ${props => props.theme.colors['background-2']};
-  box-shadow: 20px 20px 60px ${props => props.theme.colors['background-3']},
-    -20px -20px 60px ${props => props.theme.colors['background-1']};
+
+  @media (min-width: 768px) {
+    height: 20%;
+  }
 
   z-index: 1;
 `
 
 export const ChatScreen = styled.div`
-  height: 90%;
-  width: 100%;
+  height: 80%;
 
-  padding: 1rem 1rem;
+  padding: ${props => props.theme.spacing.padding.M};
 
-  border-radius: 2rem;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  border-radius: ${props => props.theme.spacing.border_radius.L};
 
   background: ${props => props.theme.colors['background-2']};
-  box-shadow: 20px 20px 60px ${props => props.theme.colors['background-3']},
-    -20px -20px 60px ${props => props.theme.colors['background-1']};
-
   z-index: 2;
+
+  @media (min-width: 768px) {
+    height: 80%;
+  }
 `
+
+export const ChatContainer = styled.div``

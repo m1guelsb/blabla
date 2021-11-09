@@ -63,9 +63,15 @@ export default createGlobalStyle`
 
     cursor: pointer;
 
-    transition: .1s;
+    transition: ease 50ms;
+
     &:hover {
-      transform: scale(104%);
+    transform: scale(104%);
+    box-shadow: 1% 1% 5% rgba(0, 0, 0, 0.2),  -1% -1% 5% rgba(0, 0, 0, 0.2);
+    }
+    &:active {
+      box-shadow: none;
+      transform: none;
     }
   }
 

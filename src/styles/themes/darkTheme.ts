@@ -7,9 +7,9 @@ const theme = {
     'background-2': '#001F36',
     'background-3': '#000222',
 
-    primary: '#FFB800',
-    secondary: '#FF5722',
-    tertiary: '#E1E1E6'
+    primary: '#003154',
+    secondary: '#FFB800',
+    tertiary: '#FF5722'
   },
   typography: {
     'font-1': '400 16px Poppins, sans-serif',
@@ -17,11 +17,25 @@ const theme = {
     'fw-500': '500',
     'fw-700': '700',
 
-    'headline-1': '3rem',
+    headline_1: '3rem',
     'headline-2': '2rem',
     'headline-3': '1rem',
 
     paragraph: '1rem'
+  },
+
+  spacing: {
+    border_radius: {
+      S: '0.5rem',
+      M: '1rem',
+      L: '2rem'
+    },
+
+    padding: {
+      S: '0.5rem',
+      M: '1rem',
+      L: '2rem'
+    }
   }
 }
 

@@ -2,14 +2,17 @@ import styled from 'styled-components'
 
 export const ChatContainer = styled.div`
   height: 100vh;
-  padding: 1rem 1rem;
+  padding: ${props => props.theme.spacing.padding.M};
 
   display: grid;
 
   @media (min-width: 768px) {
+    height: 100vh;
     grid-template-columns: 1fr 3fr;
-    gap: 2rem;
+    gap: ${props => props.theme.spacing.padding.M};
   }
+
+  background: ${props => props.theme.colors['background-3']};
 `
 
 export const SideBarContainer = styled.div`
@@ -46,17 +49,14 @@ export const SideBarContainer = styled.div`
 `
 
 export const MainChatContainer = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 6rem;
+  gap: 1rem;
+  margin-top: 13vh;
 
-  @media (min-width: 425px) {
+  @media (min-width: 768px) {
     margin-top: 0;
-    max-width: 100%;
-    height: 100%;
-    width: 100%;
-
-    position: relative;
+    height: 70%;
   }
 `

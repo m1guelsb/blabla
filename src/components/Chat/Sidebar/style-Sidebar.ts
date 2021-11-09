@@ -1,30 +1,32 @@
 import styled from 'styled-components'
+import { transparentize } from 'polished'
 
 export const Header = styled.div`
   display: flex;
+  height: 12%;
   align-items: center;
   justify-content: space-between;
 
   position: relative;
 
-  height: 10%;
+  padding: 0 ${props => props.theme.spacing.padding.M};
+  border-radius: ${props => props.theme.spacing.border_radius.L};
 
-  padding: 1rem 1rem;
-  border-radius: 2rem;
-
-  background-color: ${props => props.theme.colors['background-2']};
   background: ${props => props.theme.colors['background-2']};
-  box-shadow: 20px 20px 60px ${props => props.theme.colors['background-3']},
-    -20px -20px 60px ${props => props.theme.colors['background-1']};
 
   z-index: 2;
+
+  @media (min-width: 768px) {
+    height: 15%;
+  }
 `
 
 export const UserAvatar = styled.div`
   position: relative;
   height: 48px;
   width: 48px;
-  padding: 0.1rem 0.1rem;
+  background: ${props =>
+    transparentize(0.8, props.theme.colors['background-1'])};
 
   border-radius: 50%;
 
@@ -32,20 +34,16 @@ export const UserAvatar = styled.div`
   align-items: center;
   justify-content: center;
 
-  box-shadow: 2px 2px 6px ${props => props.theme.colors['background-3']},
-    -2px -2px 6px ${props => props.theme.colors['background-1']};
-
   .avatar {
     border-radius: 50%;
   }
 `
 
 export const ButtonIcon = styled.button`
-  background: none ${props => props.theme.colors['background-2']};
+  background: ${props => transparentize(0.8, props.theme.colors.tertiary)};
 
-  background: ${props => props.theme.colors['background-2']};
-  box-shadow: 2px 2px 6px ${props => props.theme.colors['background-3']},
-    -2px -2px 6px ${props => props.theme.colors['background-1']};
+  box-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 0.2),
+    -0.5px -0.5px 3px rgba(0, 0, 0, 0.2);
 
   height: 48px;
   width: 48px;
@@ -57,24 +55,14 @@ export const ButtonIcon = styled.button`
   border: none;
   align-items: center;
 
-  border-radius: 50%;
-
-  transition: ease-in-out 0, 5s;
-
-  &:hover {
-    transform: none;
-  }
-  &:active {
-    box-shadow: inset 2px 2px 6px ${props => props.theme.colors['background-3']},
-      inset -2px -2px 6px ${props => props.theme.colors['background-1']};
-  }
+  border-radius: ${props => props.theme.spacing.border_radius.M};
 `
 
 export const Talks = styled.div`
   height: 90%;
   width: 100%;
 
-  padding: 2rem 1rem;
+  padding: ${props => props.theme.spacing.padding.M};
 
   display: flex;
   flex-direction: column;
@@ -110,8 +98,6 @@ export const Talks = styled.div`
   }
 
   background: ${props => props.theme.colors['background-2']};
-  box-shadow: 20px 20px 60px ${props => props.theme.colors['background-3']},
-    -20px -20px 60px ${props => props.theme.colors['background-1']};
 
   z-index: 1;
 `
@@ -123,13 +109,14 @@ export const TalkItem = styled.div`
 
   height: 5rem;
 
-  padding: 1rem 1rem;
-  border-radius: 2rem;
-
-  background-color: ${props => props.theme.colors['background-1']};
+  padding: ${props => props.theme.spacing.padding.S};
+  border-radius: ${props => props.theme.spacing.border_radius.M};
 
   z-index: 3;
 
+  &.selected {
+    background: ${props => props.theme.colors['background-3']};
+  }
   .avatar {
     width: 5rem;
     border-radius: 50%;
