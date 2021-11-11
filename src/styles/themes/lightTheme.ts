@@ -1,3 +1,5 @@
+import { transparentize } from 'polished'
+
 const lightTheme = {
   colors: {
     'text-1': '#35383E',
@@ -10,6 +12,7 @@ const lightTheme = {
     primary: '#6545DE',
     secondary: '#49A4F7',
     terciary: '#1B1732',
+    'primary-transparent': transparentize(0.8, '#6545DE'),
 
     warning: '#FF5722'
   },

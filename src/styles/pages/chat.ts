@@ -59,7 +59,7 @@ export const UserAvatar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${props => transparentize(0.9, props.theme.colors.primary)};
+  background: ${props => props.theme.colors['primary-transparent']};
 
   border-radius: 50%;
 
@@ -69,7 +69,7 @@ export const UserAvatar = styled.div`
 `
 
 export const ButtonIcon = styled.button`
-  background: ${props => transparentize(0.9, props.theme.colors.primary)};
+  background: ${props => props.theme.colors['primary-transparent']};
 
   box-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 0.2),
     -0.5px -0.5px 3px rgba(0, 0, 0, 0.2);

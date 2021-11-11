@@ -1,8 +1,10 @@
+import { transparentize } from 'polished'
 import styled from 'styled-components'
 
 export const ButtonContainer = styled.button`
-  padding: 1rem 1rem;
-  border-radius: 0.5rem;
+  height: 4rem;
+  padding: 0 ${props => props.theme.spacing.border_radius.M};
+  border-radius: ${props => props.theme.spacing.border_radius.M};
 
   border: none;
 
@@ -11,13 +13,16 @@ export const ButtonContainer = styled.button`
   align-items: center;
   gap: 1rem;
 
+  font: ${props => props.theme.typography['font-1']};
+
   font-size: 1.1rem;
-  color: #e1e1e6;
-  background-color: ${props => props.theme.colors.secondary};
+  color: #ffffff;
+  background-color: ${props => props.theme.colors.primary};
 
-  cursor: pointer;
-
-  &:focus {
-    outline: ${props => props.theme.colors.primary};
+  &.secondary {
+    color: ${props => props.theme.colors.primary};
+    background-color: ${props =>
+      transparentize(0.8, props.theme.colors.primary)};
+    border-radius: ${props => props.theme.spacing.border_radius.S};
   }
 `

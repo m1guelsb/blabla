@@ -57,20 +57,13 @@ export default createGlobalStyle`
   }
 
   button {
-    font: ${props => props.theme.typography['font-1']};
-    font-weight: ${props => props.theme.typography['fw-500']};
-    word-break: keep-all;
-
     cursor: pointer;
 
     transition: ease 50ms;
-
     &:hover {
     transform: scale(104%);
-    box-shadow: 1% 1% 5% rgba(0, 0, 0, 0.2),  -1% -1% 5% rgba(0, 0, 0, 0.2);
     }
     &:active {
-      box-shadow: none;
       transform: none;
     }
   }
@@ -95,5 +88,14 @@ export default createGlobalStyle`
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.3rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.colors.primary};
+    border-radius: 2rem;
   }
 `

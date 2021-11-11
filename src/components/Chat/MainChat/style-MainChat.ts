@@ -16,8 +16,7 @@ export const MainChatHeader = styled.div`
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 
-  border-bottom: 2px solid
-    ${props => transparentize(0.9, props.theme.colors.primary)};
+  border-bottom: 2px solid ${props => props.theme.colors['primary-transparent']};
 
   @media (min-width: 768px) {
   }

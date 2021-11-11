@@ -88,6 +88,136 @@ export const Sidebar = (props: Props) => {
             </div>
           </div>
         </TalkItem>
+
+        <TalkItem className="">
+          <div>
+            <UserAvatar>
+              <Image
+                className="avatar"
+                src={userAvatar}
+                placeholder="empty"
+                layout="fill"
+                priority
+                quality="100"
+              />
+            </UserAvatar>
+          </div>
+
+          <div id="talkItem-message">
+            <div className="name_message">
+              <span className="name">Doge</span>
+              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
+            </div>
+            <div className="time_amount">
+              <span className="time">00:24</span>
+              <p className="amount">23</p>
+            </div>
+          </div>
+        </TalkItem>
+
+        <TalkItem className="">
+          <div>
+            <UserAvatar>
+              <Image
+                className="avatar"
+                src={userAvatar}
+                placeholder="empty"
+                layout="fill"
+                priority
+                quality="100"
+              />
+            </UserAvatar>
+          </div>
+
+          <div id="talkItem-message">
+            <div className="name_message">
+              <span className="name">Doge</span>
+              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
+            </div>
+            <div className="time_amount">
+              <span className="time">00:24</span>
+              <p className="amount">23</p>
+            </div>
+          </div>
+        </TalkItem>
+
+        <TalkItem className="">
+          <div>
+            <UserAvatar>
+              <Image
+                className="avatar"
+                src={userAvatar}
+                placeholder="empty"
+                layout="fill"
+                priority
+                quality="100"
+              />
+            </UserAvatar>
+          </div>
+
+          <div id="talkItem-message">
+            <div className="name_message">
+              <span className="name">Doge</span>
+              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
+            </div>
+            <div className="time_amount">
+              <span className="time">00:24</span>
+              <p className="amount">23</p>
+            </div>
+          </div>
+        </TalkItem>
+
+        <TalkItem className="">
+          <div>
+            <UserAvatar>
+              <Image
+                className="avatar"
+                src={userAvatar}
+                placeholder="empty"
+                layout="fill"
+                priority
+                quality="100"
+              />
+            </UserAvatar>
+          </div>
+
+          <div id="talkItem-message">
+            <div className="name_message">
+              <span className="name">Doge</span>
+              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
+            </div>
+            <div className="time_amount">
+              <span className="time">00:24</span>
+              <p className="amount">23</p>
+            </div>
+          </div>
+        </TalkItem>
+
+        <TalkItem className="">
+          <div>
+            <UserAvatar>
+              <Image
+                className="avatar"
+                src={userAvatar}
+                placeholder="empty"
+                layout="fill"
+                priority
+                quality="100"
+              />
+            </UserAvatar>
+          </div>
+
+          <div id="talkItem-message">
+            <div className="name_message">
+              <span className="name">Doge</span>
+              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
+            </div>
+            <div className="time_amount">
+              <span className="time">00:24</span>
+              <p className="amount">23</p>
+            </div>
+          </div>
+        </TalkItem>
       </Talks>
     </>
   )

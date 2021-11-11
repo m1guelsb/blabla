@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const InputContainer = styled.input`
-  height: 3rem;
-  padding: 2rem 1.5rem;
+  height: 4rem;
+  padding: 0 ${props => props.theme.spacing.border_radius.M};
 
-  border-radius: 0.5rem;
+  border-radius: ${props => props.theme.spacing.border_radius.M};
 
   font: ${props => props.theme.typography['font-1']};
   color: ${props => props.theme.colors['text-1']};

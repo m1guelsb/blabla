@@ -10,7 +10,8 @@ export const Talks = styled.div`
   flex-direction: column;
   gap: 1rem;
 
-  overflow-y: scroll;
+  overflow-y: auto;
+  direction: rtl;
 
   border-radius: 2rem;
 
@@ -20,6 +21,8 @@ export const Talks = styled.div`
 `
 export const TalkItem = styled.div`
   min-height: 5rem;
+
+  direction: ltr;
 
   display: flex;
   align-items: center;
@@ -38,10 +41,10 @@ export const TalkItem = styled.div`
     position: absolute;
     bottom: -6px;
     left: 0;
-    background: ${props => transparentize(0.9, props.theme.colors.primary)};
+    background: ${props => props.theme.colors['primary-transparent']};
   }
   &.selected {
-    background: ${props => transparentize(0.9, props.theme.colors.primary)};
+    background: ${props => props.theme.colors['primary-transparent']};
   }
 
   #talkItem-message {

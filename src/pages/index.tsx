@@ -60,7 +60,9 @@ export default function Home() {
             </span>
           </div>
 
-          <Button>Entrar</Button>
+          <Link href="/chat">
+            <Button>Entrar</Button>
+          </Link>
 
           <div id="newAccount">
             <p>
@@ -75,7 +77,7 @@ export default function Home() {
 
           <div id="otherSignIn">
             <span>Or: </span>
-            <Button backgroundColor="#003154" width="230px">
+            <Button className="secondary" width="230px">
               Sign In with Google
             </Button>
           </div>
