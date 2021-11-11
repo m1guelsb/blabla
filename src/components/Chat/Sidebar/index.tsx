@@ -1,17 +1,9 @@
 import React, { useState } from 'react'
-import {
-  Header,
-  UserAvatar,
-  ButtonIcon,
-  Talks,
-  TalkItem
-} from './style-Sidebar'
+import { Talks, TalkItem } from './style-Sidebar'
 import Image from 'next/image'
 
 import userAvatar from '../../../assets/images/doge.png'
-import catjam from '../../../assets/images/catjam.gif'
-import pepo from '../../../assets/images/pepo.gif'
-import { PlusCircledIcon, DotsVerticalIcon } from '@radix-ui/react-icons'
+import { UserAvatar } from '../../../styles/pages/chat'
 
 interface Props {}
 
@@ -28,24 +20,6 @@ export const Sidebar = (props: Props) => {
 
   return (
     <>
-      <Header>
-        <UserAvatar>
-          <Image
-            className="avatar"
-            src={pepo}
-            placeholder="empty"
-            layout="fill"
-            priority
-            quality="100"
-          />
-        </UserAvatar>
-        <ButtonIcon>
-          <PlusCircledIcon color="#FFB800" height="32" width="32" />
-        </ButtonIcon>
-        <ButtonIcon onClick={handleTalksOpen}>
-          <DotsVerticalIcon color="#FFB800" height="32" width="32" />
-        </ButtonIcon>
-      </Header>
       <Talks className={talksOpen}>
         <TalkItem className="selected">
           <div>

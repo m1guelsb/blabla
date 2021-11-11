@@ -1,9 +1,9 @@
 import React from 'react'
-import { UserAvatar } from '../Sidebar/style-Sidebar'
 import { ChatScreen, MainChatHeader } from './style-MainChat'
 import Image from 'next/image'
 
 import doge from '../../../assets/images/doge.png'
+import { UserAvatar } from '../../../styles/pages/chat'
 
 interface Props {}
 

@@ -1,22 +1,6 @@
 import styled from 'styled-components'
 import { transparentize } from 'polished'
 
-export const Header = styled.div`
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  position: relative;
-
-  padding: 0 ${props => props.theme.spacing.padding.M};
-  border-radius: ${props => props.theme.spacing.border_radius.L};
-
-  background: ${props => props.theme.colors['background-2']};
-
-  z-index: 2;
-`
-
 export const UserAvatar = styled.div`
   position: relative;
   height: 3rem;
@@ -51,9 +35,6 @@ export const ButtonIcon = styled.button`
 `
 
 export const Talks = styled.div`
-  height: 90%;
-  width: 100%;
-
   padding: ${props => props.theme.spacing.padding.M};
 
   display: flex;
@@ -62,32 +43,7 @@ export const Talks = styled.div`
 
   border-radius: 2rem;
 
-  display: none;
-
   transition: 0.2s ease;
-  @media (max-width: 768px) {
-    &.open {
-      width: 96%;
-      height: 80%;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      position: absolute;
-      z-index: 4;
-      top: 6rem;
-      right: 2%;
-    }
-  }
-
-  @media (min-width: 768px) {
-    width: 96%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    z-index: 4;
-    right: 2%;
-    width: 100%;
-  }
 
   background: ${props => props.theme.colors['background-2']};
 

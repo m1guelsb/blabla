@@ -1,61 +1,55 @@
+import { transparentize } from 'polished'
 import styled from 'styled-components'
 
 export const ChatContainer = styled.div`
   height: 100vh;
+
   padding: ${props => props.theme.spacing.padding.M};
 
-  display: grid;
-
   @media (min-width: 768px) {
-    height: 100vh;
-    grid-template-columns: 1fr 3fr;
-    gap: ${props => props.theme.spacing.padding.M};
   }
 
   background: ${props => props.theme.colors['background-3']};
 `
 
-export const SideBarContainer = styled.div`
-  max-width: 384px;
-  width: 100%;
-  height: 96%;
-
-  position: absolute;
-  z-index: 4;
-  top: 1rem;
-  right: 100px;
-
-  display: none;
-  @media (max-width: 768px) {
-    width: 96%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: absolute;
-    z-index: 4;
-    top: 1rem;
-    right: 2%;
-  }
-
-  @media (min-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: relative;
-    top: 0;
-    right: 0;
-    height: 100%;
-  }
-`
+export const SideBarContainer = styled.div``
 
 export const MainChatContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-top: 13vh;
-
   @media (min-width: 768px) {
-    height: 100%;
-    margin-top: 0;
   }
+`
+
+export const UserAvatar = styled.div`
+  position: relative;
+  height: 3rem;
+  width: 3rem;
+  background: ${props =>
+    transparentize(0.8, props.theme.colors['background-1'])};
+
+  border-radius: 50%;
+
+  .avatar {
+    border-radius: 50%;
+  }
+`
+
+export const ButtonIcon = styled.button`
+  background: ${props => transparentize(0.8, props.theme.colors.tertiary)};
+
+  box-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 0.2),
+    -0.5px -0.5px 3px rgba(0, 0, 0, 0.2);
+
+  height: 3rem;
+  width: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  align-items: center;
+
+  border-radius: ${props => props.theme.spacing.border_radius.M};
 `
