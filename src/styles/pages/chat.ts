@@ -27,6 +27,8 @@ export const HeaderContainer = styled.div`
 export const SideBarContainer = styled.div`
   height: 100%;
   display: flex;
+  display: none;
+
   flex-direction: column;
 
   white-space: nowrap;
@@ -40,8 +42,10 @@ export const SideBarContainer = styled.div`
 `
 export const MainChatContainer = styled.div`
   height: 100%;
-  display: none;
+  display: flex;
   flex-direction: column;
+
+  overflow: hidden;
 
   @media (min-width: 768px) {
     display: flex;
