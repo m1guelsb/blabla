@@ -1,67 +1,49 @@
-import styled from 'styled-components'
 import { transparentize } from 'polished'
-
-export const UserAvatar = styled.div`
-  position: relative;
-  height: 3rem;
-  width: 3rem;
-  background: ${props =>
-    transparentize(0.8, props.theme.colors['background-1'])};
-
-  border-radius: 50%;
-
-  .avatar {
-    border-radius: 50%;
-  }
-`
-
-export const ButtonIcon = styled.button`
-  background: ${props => transparentize(0.8, props.theme.colors.tertiary)};
-
-  box-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 0.2),
-    -0.5px -0.5px 3px rgba(0, 0, 0, 0.2);
-
-  height: 3rem;
-  width: 3rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: none;
-  align-items: center;
-
-  border-radius: ${props => props.theme.spacing.border_radius.M};
-`
+import styled from 'styled-components'
 
 export const Talks = styled.div`
+  height: 100%;
+
   padding: ${props => props.theme.spacing.padding.M};
 
   display: flex;
   flex-direction: column;
   gap: 1rem;
 
+  overflow-y: scroll;
+
   border-radius: 2rem;
 
   transition: 0.2s ease;
 
-  background: ${props => props.theme.colors['background-2']};
-
   z-index: 1;
 `
 export const TalkItem = styled.div`
-  height: 4rem;
+  min-height: 5rem;
 
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 
-  padding: 0 ${props => props.theme.spacing.padding.S};
+  padding: 0 ${props => props.theme.spacing.padding.M};
   border-radius: ${props => props.theme.spacing.border_radius.M};
 
-  &.selected {
-    background: ${props => props.theme.colors['background-3']};
+  position: relative;
+
+  & + div::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    background: ${props => transparentize(0.9, props.theme.colors.primary)};
   }
+  &.selected {
+    background: ${props => transparentize(0.9, props.theme.colors.primary)};
+  }
+
   #talkItem-message {
     width: 100%;
     display: flex;
@@ -81,9 +63,9 @@ export const TalkItem = styled.div`
       overflow: hidden;
       text-overflow: ellipsis;
       .name {
-        font-weight: ${props => props.theme.typography['fw-700']};
       }
       .message {
+        color: ${props => props.theme.colors['text-2']};
       }
     }
 

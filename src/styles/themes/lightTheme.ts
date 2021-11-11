@@ -1,15 +1,15 @@
 const lightTheme = {
   colors: {
-    'text-1': '#000222',
-    'text-2': '#003154',
+    'text-1': '#35383E',
+    'text-2': '#666666',
 
     'background-1': '#b6b6bd',
-    'background-2': '#E1E1E6',
-    'background-3': '#FFFFFF',
+    'background-2': '#FFFFFF',
+    'background-3': '#E3E3E3',
 
-    primary: '#FFB800',
-    secondary: '#003154',
-    tertiary: '#FFB800',
+    primary: '#6545DE',
+    secondary: '#49A4F7',
+    terciary: '#1B1732',
 
     warning: '#FF5722'
   },

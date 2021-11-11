@@ -11,7 +11,7 @@ import moonIcon from '../assets/images/moon.svg'
 import sunIcon from '../assets/images/sun.svg'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const [theme, setTheme] = useState(lightTheme)
+  const [theme, setTheme] = useState(darkTheme)
 
   function handleSetTheme() {
     if (theme === darkTheme) {

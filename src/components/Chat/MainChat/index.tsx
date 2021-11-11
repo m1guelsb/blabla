@@ -20,9 +20,9 @@ export const MainChat = (props: Props) => {
             quality="100"
           />
         </UserAvatar>
-        <div id="name-lastactive">
-          <span id="chat-name">Doge</span>
-          <p id="last-active">Last Seen 3 hours ago</p>
+        <div id="name-active">
+          <span className="chat-name">Doge</span>
+          <p className="last-active">Last Seen 3 hours ago</p>
         </div>
       </MainChatHeader>
       <ChatScreen>{/* <ChatContainer></ChatContainer> */}</ChatScreen>

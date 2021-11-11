@@ -7,7 +7,8 @@ import { MainChat } from '../components/Chat/MainChat'
 import {
   ChatContainer,
   SideBarContainer,
-  MainChatContainer
+  MainChatContainer,
+  HeaderContainer
 } from '../styles/pages/chat'
 
 interface Props {}
@@ -16,7 +17,9 @@ export default function Chat(props: Props) {
   return (
     <>
       <ChatContainer>
-        <Header />
+        <HeaderContainer>
+          <Header />
+        </HeaderContainer>
         <SideBarContainer>
           <Sidebar />
         </SideBarContainer>

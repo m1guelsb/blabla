@@ -23,10 +23,10 @@ export const Header = (props: Props) => {
         />
       </UserAvatar>
       <ButtonIcon>
-        <PlusCircledIcon color="#FFB800" height="32" width="32" />
+        <PlusCircledIcon color="#6545DE" height="32" width="32" />
       </ButtonIcon>
       <ButtonIcon>
-        <DotsVerticalIcon color="#FFB800" height="32" width="32" />
+        <DotsVerticalIcon color="#6545DE" height="32" width="32" />
       </ButtonIcon>
     </HeaderContainer>
   )

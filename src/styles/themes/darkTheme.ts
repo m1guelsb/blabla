@@ -1,15 +1,15 @@
 const theme = {
   colors: {
-    'text-1': '#E1E1E6',
-    'text-2': '#FFFFFF',
+    'text-1': '#FFFFFF',
+    'text-2': '#9086A3',
 
     'background-1': '#003154',
     'background-2': '#001F36',
-    'background-3': '#000222',
+    'background-3': '#13121E',
 
-    primary: '#003154',
-    secondary: '#FFB800',
-    tertiary: '#FF5722',
+    primary: '#6545DE',
+    secondary: '#49A4F7',
+    terciary: '#1B1732',
 
     warning: '#FF5722'
   },
@@ -19,7 +19,7 @@ const theme = {
     'fw-500': '500',
     'fw-700': '700',
 
-    headline_1: '3rem',
+    'headline-1': '3rem',
     'headline-2': '2rem',
     'headline-3': '1rem',
 
