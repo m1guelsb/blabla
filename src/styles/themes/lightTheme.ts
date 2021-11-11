@@ -9,7 +9,9 @@ const lightTheme = {
 
     primary: '#FFB800',
     secondary: '#003154',
-    tertiary: '#FFB800'
+    tertiary: '#FFB800',
+
+    warning: '#FF5722'
   },
   typography: {
     'font-1': '400 16px Poppins, sans-serif',

@@ -9,7 +9,9 @@ const theme = {
 
     primary: '#003154',
     secondary: '#FFB800',
-    tertiary: '#FF5722'
+    tertiary: '#FF5722',
+
+    warning: '#FF5722'
   },
   typography: {
     'font-1': '400 16px Poppins, sans-serif',

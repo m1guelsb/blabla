@@ -49,14 +49,13 @@ export const SideBarContainer = styled.div`
 `
 
 export const MainChatContainer = styled.div`
-  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-top: 13vh;
 
   @media (min-width: 768px) {
+    height: 100%;
     margin-top: 0;
-    height: 70%;
   }
 `

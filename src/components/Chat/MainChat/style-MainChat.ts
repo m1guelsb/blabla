@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
 export const MainChatHeader = styled.div`
+  height: 5rem;
+
   display: flex;
-  height: 10%;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
 
   position: relative;
 
@@ -14,10 +15,13 @@ export const MainChatHeader = styled.div`
   background-color: ${props => props.theme.colors['background-2']};
 
   @media (min-width: 768px) {
-    height: 20%;
   }
 
-  z-index: 1;
+  #name-lastactive {
+    #chat-name {
+      font-size: 1rem;
+    }
+  }
 `
 
 export const ChatScreen = styled.div`
@@ -31,7 +35,7 @@ export const ChatScreen = styled.div`
   z-index: 2;
 
   @media (min-width: 768px) {
-    height: 80%;
+    height: 100%;
   }
 `
 

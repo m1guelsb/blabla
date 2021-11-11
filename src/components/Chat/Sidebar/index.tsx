@@ -17,7 +17,6 @@ interface Props {}
 
 export const Sidebar = (props: Props) => {
   const [talksOpen, setTalksOpen] = useState('')
-  const [talkSelect, setTalkSelect] = useState('')
 
   function handleTalksOpen() {
     if (talksOpen === '') {
@@ -49,46 +48,28 @@ export const Sidebar = (props: Props) => {
       </Header>
       <Talks className={talksOpen}>
         <TalkItem className="selected">
-          <UserAvatar>
-            <Image
-              className="avatar"
-              src={userAvatar}
-              placeholder="empty"
-              priority
-              quality="100"
-            />
-          </UserAvatar>
-          <div id="name-message">
-            <span id="name">Doge</span>
-            <p id="message">
-              Bonk bonkbonk bonkbonkbonkbonkbonkbonkbonkbonkbon
-            </p>
+          <div>
+            <UserAvatar>
+              <Image
+                className="avatar"
+                src={userAvatar}
+                placeholder="empty"
+                layout="fill"
+                priority
+                quality="100"
+              />
+            </UserAvatar>
           </div>
-          <div id="mTime-mNumber">
-            <span id="time">00:24</span>
-            <p id="unseenMessagesNumber">2</p>
-          </div>
-        </TalkItem>
 
-        <TalkItem className="">
-          <UserAvatar>
-            <Image
-              className="avatar"
-              src={catjam}
-              placeholder="empty"
-              priority
-              quality="100"
-            />
-          </UserAvatar>
-          <div id="name-message">
-            <span id="name">Catjam</span>
-            <p id="message">
-              Catjam catjam catjam catjam catjam catjam catjam catjam catjam cat
-            </p>
-          </div>
-          <div id="mTime-mNumber">
-            <span id="time">00:24</span>
-            <p id="unseenMessagesNumber">2</p>
+          <div id="talkItem-message">
+            <div className="name_message">
+              <span className="name">Doge</span>
+              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
+            </div>
+            <div className="time_amount">
+              <span className="time">00:24</span>
+              <p className="amount">23</p>
+            </div>
           </div>
         </TalkItem>
       </Talks>

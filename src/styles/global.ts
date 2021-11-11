@@ -7,7 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
     text-decoration: none;
 
-    font-size: 12px;
+    font-size: 14px;
 
     @media(min-width: 768px) {
       font-size: 16px;
