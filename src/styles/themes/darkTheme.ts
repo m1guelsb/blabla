@@ -9,11 +9,12 @@ const theme = {
     'background-2': '#001F36',
     'background-3': '#13121E',
 
-    primary: '#6545DE',
+    primary: '#4D34A8',
     secondary: '#49A4F7',
     terciary: '#1B1732',
     'primary-transparent': transparentize(0.8, '#6545DE'),
 
+    confirm: '#00A865',
     warning: '#FF5722'
   },
   typography: {

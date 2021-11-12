@@ -20,7 +20,7 @@ export const ButtonContainer = styled.button`
   background-color: ${props => props.theme.colors.primary};
 
   &.secondary {
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors['text-1']};
     background-color: ${props =>
       transparentize(0.8, props.theme.colors.primary)};
     border-radius: ${props => props.theme.spacing.border_radius.S};

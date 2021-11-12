@@ -8,8 +8,6 @@ export const ChatContainer = styled.div`
   flex-direction: column;
   gap: 1rem;
 
-  padding: ${props => props.theme.spacing.padding.M};
-
   @media (min-width: 768px) {
     display: grid;
     grid-auto-columns: 360px 1fr;
@@ -27,7 +25,7 @@ export const HeaderContainer = styled.div`
 export const SideBarContainer = styled.div`
   height: 100%;
   display: flex;
-  display: none;
+  /* display: none; */
 
   flex-direction: column;
 

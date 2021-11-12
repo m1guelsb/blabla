@@ -13,7 +13,9 @@ const lightTheme = {
     secondary: '#49A4F7',
     terciary: '#1B1732',
     'primary-transparent': transparentize(0.8, '#6545DE'),
+    'secondary-transparent': transparentize(0.8, '#49A4F7'),
 
+    confirm: '#00A865',
     warning: '#FF5722'
   },
   typography: {

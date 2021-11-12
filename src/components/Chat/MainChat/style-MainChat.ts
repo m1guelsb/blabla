@@ -38,8 +38,11 @@ export const MainChatScreen = styled.div`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 
+  padding: 0 0 ${props => props.theme.spacing.padding.M};
+
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1rem;
 
   z-index: 2;
@@ -50,28 +53,43 @@ export const MainChatScreen = styled.div`
 `
 
 export const Messages = styled.div`
-  padding-right: 1rem;
+  padding: 0 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 
   overflow-y: auto;
 `
-export const SenderMessageContainer = styled.div`
+export const ReceivedMessageContainer = styled.div`
   display: flex;
   justify-content: flex-start;
 `
-export const SenderMessage = styled.div`
+export const ReceivedMessage = styled.div`
   padding: 1rem 1.5rem;
   max-width: 80%;
   border-radius: ${props => props.theme.spacing.border_radius.L};
 
-  background: ${props => props.theme.colors['primary-transparent']};
+  border: 1px solid ${props => props.theme.colors['primary-transparent']};
 `
 
 export const UserMessageContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+
+  & + .userMessage {
+    div {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      margin-top: -1rem;
+    }
+  }
+
+  & ~ .userMessage {
+    div {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
 `
 
 export const UserMessage = styled.div`
@@ -86,6 +104,8 @@ export const UserMessage = styled.div`
 export const SendMessageInputContainer = styled.div`
   display: flex;
   gap: 1rem;
+
+  padding: 0 0.8rem;
 
   input {
     width: 100%;

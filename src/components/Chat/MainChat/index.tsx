@@ -1,12 +1,12 @@
 import React from 'react'
 import {
-  MainChatScreen,
   MainChatHeader,
+  MainChatScreen,
   Messages,
-  SenderMessage,
-  UserMessage,
-  SenderMessageContainer,
+  ReceivedMessageContainer,
+  ReceivedMessage,
   UserMessageContainer,
+  UserMessage,
   SendMessageInputContainer
 } from './style-MainChat'
 import Image from 'next/image'
@@ -38,43 +38,30 @@ export const MainChat = (props: Props) => {
       </MainChatHeader>
       <MainChatScreen>
         <Messages>
-          <SenderMessageContainer>
-            <SenderMessage>
+          <ReceivedMessageContainer>
+            <ReceivedMessage>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
                 nobis vitae officiis aliquam fugit quasi atque aliquid suscipit
-                praesentium? Nesciunt voluptas laborum molestiae libero ducimus
-                ipsa beatae, dolorum incidunt nihil?
+                praesentium?
               </p>
-            </SenderMessage>
-          </SenderMessageContainer>
-          <UserMessageContainer>
+            </ReceivedMessage>
+          </ReceivedMessageContainer>
+          <UserMessageContainer className="userMessage">
             <UserMessage>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Voluptate a vel, sunt ipsum aspernatur numquam sit ducimus vero
-                iste debitis odio ipsa sint dolorum quam tenetur officia
-                voluptatem laboriosam dolorem.
+                Voluptate a vel
               </p>
             </UserMessage>
           </UserMessageContainer>
-          <UserMessageContainer>
+          <UserMessageContainer className="userMessage">
             <UserMessage>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Quibusdam laborum ea aliquid eius, iusto voluptatem sapiente
-                molestiae beatae, voluptas provident molestias cumque? Deserunt
-                voluptatem voluptates sequi quibusdam quas ipsum non officia
-                commodi laudantium, fugit ullam voluptate vel ut pariatur
-                tenetur maiores mollitia ipsa perferendis! Aspernatur,
-                cupiditate qui ipsa animi incidunt nihil molestiae minima
-                adipisci fugit?
-              </p>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             </UserMessage>
           </UserMessageContainer>
-
-          <SenderMessageContainer>
-            <SenderMessage>
+          <ReceivedMessageContainer>
+            <ReceivedMessage>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Explicabo architecto aut ex quia impedit ipsum numquam odio
@@ -88,9 +75,8 @@ export const MainChat = (props: Props) => {
                 necessitatibus sint cumque, ratione doloribus nihil esse
                 eligendi veniam consequuntur dicta cum voluptatibus saepe!
               </p>
-            </SenderMessage>
-          </SenderMessageContainer>
-
+            </ReceivedMessage>
+          </ReceivedMessageContainer>
           <UserMessageContainer>
             <UserMessage>
               <p>oin</p>

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const Talks = styled.div`
   height: 100%;
 
-  padding: ${props => props.theme.spacing.padding.M};
+  padding: 0 ${props => props.theme.spacing.padding.M};
 
   display: flex;
   flex-direction: column;
