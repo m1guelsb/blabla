@@ -75,21 +75,6 @@ export const ReceivedMessage = styled.div`
 export const UserMessageContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-
-  & + .userMessage {
-    div {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      margin-top: -1rem;
-    }
-  }
-
-  & ~ .userMessage {
-    div {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-    }
-  }
 `
 
 export const UserMessage = styled.div`
