@@ -6,7 +6,7 @@ import { currentFirestore, firestore } from '../../services/firebase'
 interface UsersDataProps {
   email: string | any
   name: string | undefined | null
-  lastSeen?: firestore.FieldValue | undefined | null
+  lastSeen?: firestore.FieldValue
   photoURL: string | undefined | null
 }
 const usersCollRef = collection(currentFirestore, 'users')
