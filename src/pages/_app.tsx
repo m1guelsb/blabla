@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
+
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
-import Image from 'next/image'
-
 import GlobalStyle from '../styles/global'
 import darkTheme from '../styles/themes/darkTheme'
 import lightTheme from '../styles/themes/lightTheme'
-
 import moonIcon from '../assets/images/moon.svg'
 import sunIcon from '../assets/images/sun.svg'
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  const [theme, setTheme] = useState(darkTheme)
+import Image from 'next/Image'
 
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  //THEME CONFIG
+  const [theme, setTheme] = useState(darkTheme)
   function handleSetTheme() {
     if (theme === darkTheme) {
       setTheme(lightTheme)

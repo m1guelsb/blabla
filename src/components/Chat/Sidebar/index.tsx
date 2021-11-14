@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Talks, TalkItem } from './style-Sidebar'
-import Image from 'next/image'
+import Image from 'next/Image'
 
 import userAvatar from '../../../assets/images/doge.png'
 import { UserAvatar } from '../../../styles/pages/chat'

@@ -10,15 +10,19 @@ import {
   MainChatContainer,
   HeaderContainer
 } from '../styles/pages/chat'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { fireAuth } from '../../services/firebase'
 
 interface Props {}
 
 export default function Chat(props: Props) {
+  const [user, loading, error] = useAuthState(fireAuth)
+
   return (
     <>
       <ChatContainer>
         <HeaderContainer>
-          <Header />
+          <Header userAvatar={user?.photoURL} />
         </HeaderContainer>
         <SideBarContainer>
           <Sidebar />
