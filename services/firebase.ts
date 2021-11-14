@@ -13,14 +13,13 @@ const firebaseConfig = {
 
 const fireApp =
   app.getApps().length == 0 ? app.initializeApp(firebaseConfig) : app.getApp()
-
+//login - logout
 const fireAuth = auth.getAuth(fireApp)
-const fireFirestore = firestore.getFirestore(fireApp)
-
-const logout = () => auth.signOut(fireAuth)
-
 const googleProvider = new auth.GoogleAuthProvider()
 const signInWithGooglePopup = () =>
   auth.signInWithPopup(fireAuth, googleProvider)
+const logout = () => auth.signOut(fireAuth)
 
-export { fireAuth, logout, signInWithGooglePopup }
+const currentFirestore = firestore.getFirestore(fireApp)
+
+export { fireAuth, logout, signInWithGooglePopup, currentFirestore, firestore }

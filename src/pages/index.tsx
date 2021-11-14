@@ -23,14 +23,9 @@ export default function LoginPage() {
       Router.push('/chat')
     }
   })
-
   function signInWithGoogle() {
     signInWithGooglePopup().catch(alert)
   }
-
-  useEffect(() => {
-    console.log(loading)
-  })
 
   return (
     <div>
