@@ -33,6 +33,8 @@ export const TalkItem = styled.div`
 
   position: relative;
 
+  cursor: pointer;
+
   & + div::after {
     content: '';
     height: 2px;

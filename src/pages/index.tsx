@@ -1,16 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/Image'
+import Link from 'next/Link'
+import Router from 'next/router'
+
 import { Input } from '../components/Input'
 import { Button } from '../components/Button'
 import { Divider } from '../components/Divider'
 
+import { useAuthState } from 'react-firebase-hooks/auth'
+
 import { Container, Logo, Form } from '../styles/pages/index'
 import LogoIMG from '../assets/images/logo.svg'
 import IconIMG from '../assets/images/icon.svg'
+import { auth, fireAuth } from '../../services/firebase'
 
-export default function Home() {
+export default function LoginPage() {
+  const [user, loading, error] = useAuthState(fireAuth)
+
+  useEffect(() => {
+    if (user) {
+      Router.push('/chat')
+    }
+  })
+
+  async function signInWithGoogle() {
+    const googleProvider = new auth.GoogleAuthProvider()
+    await auth.signInWithPopup(fireAuth, googleProvider).catch(alert)
+  }
+
   return (
     <div>
       <Head>
@@ -60,9 +78,7 @@ export default function Home() {
             </span>
           </div>
 
-          <Link href="/chat">
-            <Button>Entrar</Button>
-          </Link>
+          <Button>{loading ? 'Entrando' : 'Entrar'}</Button>
 
           <div id="newAccount">
             <p>
@@ -77,8 +93,12 @@ export default function Home() {
 
           <div id="otherSignIn">
             <span>Or: </span>
-            <Button className="secondary" width="230px">
-              Sign In with Google
+            <Button
+              onClick={() => signInWithGoogle()}
+              className="secondary"
+              width="230px"
+            >
+              {loading ? 'Entrando com gogle' : 'Sign In with Google'}
             </Button>
           </div>
         </Form>

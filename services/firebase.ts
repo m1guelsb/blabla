@@ -1,21 +1,21 @@
-import firebase from 'firebase/compat/app'
+import * as app from 'firebase/app'
+import * as auth from 'firebase/auth'
+import * as firestore from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID
+  apiKey: 'AIzaSyAm-3Qd3RyD7Y2L9qNoZhpNt-bTVjY8dKU',
+  authDomain: 'blabla-38fc9.firebaseapp.com',
+  projectId: 'blabla-38fc9',
+  storageBucket: 'blabla-38fc9.appspot.com',
+  messagingSenderId: '356546218597',
+  appId: '1:356546218597:web:8ba9aa53cae79e279ad48c'
 }
 
-//ssr precaution - only initialize if theres no apps initiated, if its, use it
-const app = !firebase.apps.length
-  ? firebase.initializeApp(firebaseConfig)
-  : firebase.app()
+const fireApp = !app.getApps().length
+  ? app.initializeApp(firebaseConfig)
+  : app.getApp()
 
-const db = app.firestore()
-const auth = app.auth()
-const provider = new firebase.auth.GoogleAuthProvider()
+const fireAuth = auth.getAuth(fireApp)
+const fireFirestore = firestore.getFirestore(fireApp)
 
-export { db, auth, provider }
+export { fireApp, auth, fireAuth, firestore, fireFirestore }
