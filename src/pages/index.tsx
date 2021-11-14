@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Head from 'next/head'
-import Image from 'next/Image'
+import Image from 'next/image'
 import Link from 'next/Link'
 import Router from 'next/router'
 
@@ -13,7 +13,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { Container, Logo, Form } from '../styles/pages/index'
 import LogoIMG from '../assets/images/logo.svg'
 import IconIMG from '../assets/images/icon.svg'
-import { auth, fireAuth } from '../../services/firebase'
+import { fireAuth, signInWithGooglePopup } from '../../services/firebase'
 
 export default function LoginPage() {
   const [user, loading, error] = useAuthState(fireAuth)
@@ -24,10 +24,13 @@ export default function LoginPage() {
     }
   })
 
-  async function signInWithGoogle() {
-    const googleProvider = new auth.GoogleAuthProvider()
-    await auth.signInWithPopup(fireAuth, googleProvider).catch(alert)
+  function signInWithGoogle() {
+    signInWithGooglePopup().catch(alert)
   }
+
+  useEffect(() => {
+    console.log(loading)
+  })
 
   return (
     <div>

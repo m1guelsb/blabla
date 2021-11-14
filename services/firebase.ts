@@ -3,19 +3,24 @@ import * as auth from 'firebase/auth'
 import * as firestore from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTH_DOMAIN,
-  projectId: process.env.PROJECT_ID,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGING_SENDER_ID,
-  appId: process.env.APP_ID
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID
 }
 
-const fireApp = !app.getApps().length
-  ? app.initializeApp(firebaseConfig)
-  : app.getApp()
+const fireApp =
+  app.getApps().length == 0 ? app.initializeApp(firebaseConfig) : app.getApp()
 
 const fireAuth = auth.getAuth(fireApp)
 const fireFirestore = firestore.getFirestore(fireApp)
 
-export { fireApp, auth, fireAuth, firestore, fireFirestore }
+const logout = () => auth.signOut(fireAuth)
+
+const googleProvider = new auth.GoogleAuthProvider()
+const signInWithGooglePopup = () =>
+  auth.signInWithPopup(fireAuth, googleProvider)
+
+export { fireAuth, logout, signInWithGooglePopup }

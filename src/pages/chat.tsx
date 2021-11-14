@@ -11,7 +11,8 @@ import {
   HeaderContainer
 } from '../styles/pages/chat'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { fireAuth } from '../../services/firebase'
+import { fireAuth, logout } from '../../services/firebase'
+import Head from 'next/head'
 
 interface Props {}
 
@@ -20,10 +21,15 @@ export default function Chat(props: Props) {
 
   return (
     <>
+      <Head>
+        <title>blablá | Login</title>
+      </Head>
+
       <ChatContainer>
         <HeaderContainer>
-          <Header userAvatar={user?.photoURL} />
+          <Header user={user} logout={logout} />
         </HeaderContainer>
+
         <SideBarContainer>
           <Sidebar />
         </SideBarContainer>

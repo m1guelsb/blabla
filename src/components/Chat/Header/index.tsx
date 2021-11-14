@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import * as EmailValidator from 'email-validator'
 import { DotsVerticalIcon, PlusCircledIcon } from '@radix-ui/react-icons'
 
 import { HeaderContainer } from './style-header'
 
-import Image from 'next/Image'
+import Image from 'next/image'
 import pepo from '../../../assets/images/pepo.gif'
 import { ButtonIcon, UserAvatar } from '../../../styles/pages/chat'
+import Router from 'next/router'
+import { User } from '@firebase/auth'
 
 interface HeaderProps {
-  userAvatar?: string | null
+  user?: User | null
+  logout: () => Promise<void> | null
 }
 
 export const Header = (props: HeaderProps) => {
@@ -25,12 +28,26 @@ export const Header = (props: HeaderProps) => {
   //   }
   // }
 
+  async function handleLogout() {
+    const confirmLogout = window.confirm('Sure that you want to leave?')
+    if (confirmLogout === true) {
+      props.logout()
+      await Router.push('/')
+    }
+  }
+
+  useEffect(() => {
+    if (props.user === null) {
+      Router.push('/')
+    }
+  })
+
   return (
     <HeaderContainer>
       <UserAvatar>
         <Image
           className="avatar"
-          src={props.userAvatar ? props.userAvatar : pepo}
+          src={props.user?.photoURL ? props.user?.photoURL : pepo}
           placeholder="empty"
           layout="fill"
           priority
@@ -45,7 +62,7 @@ export const Header = (props: HeaderProps) => {
           width="32"
         />
       </ButtonIcon>
-      <ButtonIcon>
+      <ButtonIcon onClick={handleLogout}>
         <DotsVerticalIcon color="#6545DE" height="32" width="32" />
       </ButtonIcon>
     </HeaderContainer>

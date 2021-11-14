@@ -8,7 +8,7 @@ import lightTheme from '../styles/themes/lightTheme'
 import moonIcon from '../assets/images/moon.svg'
 import sunIcon from '../assets/images/sun.svg'
 
-import Image from 'next/Image'
+import Image from 'next/image'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   //THEME CONFIG

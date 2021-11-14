@@ -9,7 +9,7 @@ import {
   UserMessage,
   SendMessageInputContainer
 } from './style-MainChat'
-import Image from 'next/Image'
+import Image from 'next/image'
 
 import doge from '../../../assets/images/doge.png'
 import { UserAvatar } from '../../../styles/pages/chat'
