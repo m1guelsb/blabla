@@ -76,7 +76,7 @@ export default function LoginPage() {
             </span>
           </div>
 
-          <Button>{loading ? 'Entrando' : 'Entrar'}</Button>
+          <Button>{'Sign In'}</Button>
 
           <div id="newAccount">
             <p>
@@ -96,7 +96,7 @@ export default function LoginPage() {
               className="secondary"
               width="230px"
             >
-              {loading ? 'Entrando com gogle' : 'Sign In with Google'}
+              {'Sign In with Google'}
             </Button>
           </div>
         </Form>

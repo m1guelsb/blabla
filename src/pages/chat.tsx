@@ -35,7 +35,7 @@ export default function Chat(props: Props) {
   return (
     <>
       <Head>
-        <title>blablá | Login</title>
+        <title>blablá | Chat</title>
       </Head>
 
       <ChatContainer>

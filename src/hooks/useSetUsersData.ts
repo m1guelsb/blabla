@@ -1,6 +1,4 @@
-import { collection, doc, setDoc, Timestamp } from '@firebase/firestore'
-import React from 'react'
-
+import { collection, doc, setDoc } from '@firebase/firestore'
 import { currentFirestore, firestore } from '../../services/firebase'
 
 interface UsersDataProps {

@@ -9,35 +9,82 @@ import pepo from '../../../assets/images/pepo.gif'
 import { ButtonIcon, UserAvatar } from '../../../styles/pages/chat'
 import Router from 'next/router'
 import { User } from '@firebase/auth'
+import useCreateChat from '../../../hooks/useCreateChat'
+import { collection, doc, query, where } from '@firebase/firestore'
+
+import { currentFirestore } from '../../../../services/firebase'
+import { useCollection } from 'react-firebase-hooks/firestore'
 
 interface HeaderProps {
   user?: User | null
   logout: () => Promise<void> | null
 }
 
-export const Header = (props: HeaderProps) => {
-  // const createChat = () => {
-  //   const input = prompt(
-  //     'Enter a email adress for the user that you want to chat'
+export const Header = ({ user, logout }: HeaderProps) => {
+  const chatsCollRef = collection(currentFirestore, 'chats')
+
+  let chatQuery
+  if (user) {
+    chatQuery = query(
+      chatsCollRef,
+      where('users', 'array-contains', user?.email)
+    )
+  }
+
+  const [snapshot, loading, error] = useCollection(chatQuery)
+  // const chatAlreadyExists = (emailToCheck: string) => {
+  //   !!snapshot?.docs.find(
+  //     chat =>
+  //       chat.data().users.find(user => user === emailToCheck)?.lenght > 0
   //   )
-
-  //   if (!input) return null
-
-  //   if (EmailValidator.validate(input)) {
-  //     //add the chat in db chats collection
-  //   }
   // }
+
+  const dados = snapshot?.docs.map(chat => chat.data().users)
+
+  const checkIfChatExists = (stringEmail: string) => {
+    return (
+      dados?.find(email => {
+        return email.find((i: string) => i === stringEmail)
+      }) && true
+    )
+  }
+
+  // find(users => users === 'miguewsb@gmail.com'
+
+  // console.log('use collection data', snapshot)
+
+  const createChat = () => {
+    const input = prompt(
+      'Enter a email adress for the user that you want to chat'
+    )
+
+    if (!input) return null
+    const userAndInputEmail = {
+      userEmail: user?.email,
+      inputEmail: input
+    }
+    if (EmailValidator.validate(input) && input !== user?.email) {
+      const chatCheckExists = checkIfChatExists(input)
+      if (chatCheckExists === true) {
+        window.alert('ja criou um chat com esse email')
+      } else {
+        useCreateChat(userAndInputEmail)
+      }
+    } else {
+      window.alert('vai conversa com vc memo? ta ficano doido')
+    }
+  }
 
   async function handleLogout() {
     const confirmLogout = window.confirm('Sure that you want to leave?')
     if (confirmLogout === true) {
-      props.logout()
+      logout()
       await Router.push('/')
     }
   }
 
   useEffect(() => {
-    if (props.user === null) {
+    if (user === null) {
       Router.push('/')
     }
   })
@@ -47,7 +94,7 @@ export const Header = (props: HeaderProps) => {
       <UserAvatar>
         <Image
           className="avatar"
-          src={props.user?.photoURL ? props.user?.photoURL : pepo}
+          src={user?.photoURL ? user?.photoURL : pepo}
           placeholder="empty"
           layout="fill"
           priority
@@ -56,7 +103,7 @@ export const Header = (props: HeaderProps) => {
       </UserAvatar>
       <ButtonIcon>
         <PlusCircledIcon
-          // onClick={createChat}
+          onClick={createChat}
           color="#6545DE"
           height="32"
           width="32"
