@@ -1,223 +1,24 @@
 import React, { useState } from 'react'
-import { Talks, TalkItem } from './style-Sidebar'
+import { Talks } from './style-Sidebar'
 import Image from 'next/image'
 
 import userAvatar from '../../../assets/images/doge.png'
 import { UserAvatar } from '../../../styles/pages/chat'
+import { TalkItem } from './TalkItem'
 
-interface Props {}
+interface Props {
+  chatsData: [emails: string | any] | any
+}
 
-export const Sidebar = (props: Props) => {
+export const Sidebar = ({ chatsData }: Props) => {
+  // console.log(chatsData?.map(chat => chat[1]))
+
   return (
     <>
       <Talks>
-        <TalkItem className="selected">
-          <div>
-            <UserAvatar>
-              <Image
-                className="avatar"
-                src={userAvatar}
-                placeholder="empty"
-                layout="fill"
-                priority
-                quality="100"
-              />
-            </UserAvatar>
-          </div>
-
-          <div id="talkItem-message">
-            <div className="name_message">
-              <span className="name">Doge</span>
-              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
-            </div>
-            <div className="time_amount">
-              <span className="time">00:24</span>
-              <p className="amount">23</p>
-            </div>
-          </div>
-        </TalkItem>
-
-        <TalkItem className="">
-          <div>
-            <UserAvatar>
-              <Image
-                className="avatar"
-                src={userAvatar}
-                placeholder="empty"
-                layout="fill"
-                priority
-                quality="100"
-              />
-            </UserAvatar>
-          </div>
-
-          <div id="talkItem-message">
-            <div className="name_message">
-              <span className="name">Doge</span>
-              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
-            </div>
-            <div className="time_amount">
-              <span className="time">00:24</span>
-              <p className="amount">23</p>
-            </div>
-          </div>
-        </TalkItem>
-
-        <TalkItem className="">
-          <div>
-            <UserAvatar>
-              <Image
-                className="avatar"
-                src={userAvatar}
-                placeholder="empty"
-                layout="fill"
-                priority
-                quality="100"
-              />
-            </UserAvatar>
-          </div>
-
-          <div id="talkItem-message">
-            <div className="name_message">
-              <span className="name">Doge</span>
-              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
-            </div>
-            <div className="time_amount">
-              <span className="time">00:24</span>
-              <p className="amount">23</p>
-            </div>
-          </div>
-        </TalkItem>
-
-        <TalkItem className="">
-          <div>
-            <UserAvatar>
-              <Image
-                className="avatar"
-                src={userAvatar}
-                placeholder="empty"
-                layout="fill"
-                priority
-                quality="100"
-              />
-            </UserAvatar>
-          </div>
-
-          <div id="talkItem-message">
-            <div className="name_message">
-              <span className="name">Doge</span>
-              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
-            </div>
-            <div className="time_amount">
-              <span className="time">00:24</span>
-              <p className="amount">23</p>
-            </div>
-          </div>
-        </TalkItem>
-
-        <TalkItem className="">
-          <div>
-            <UserAvatar>
-              <Image
-                className="avatar"
-                src={userAvatar}
-                placeholder="empty"
-                layout="fill"
-                priority
-                quality="100"
-              />
-            </UserAvatar>
-          </div>
-
-          <div id="talkItem-message">
-            <div className="name_message">
-              <span className="name">Doge</span>
-              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
-            </div>
-            <div className="time_amount">
-              <span className="time">00:24</span>
-              <p className="amount">23</p>
-            </div>
-          </div>
-        </TalkItem>
-
-        <TalkItem className="">
-          <div>
-            <UserAvatar>
-              <Image
-                className="avatar"
-                src={userAvatar}
-                placeholder="empty"
-                layout="fill"
-                priority
-                quality="100"
-              />
-            </UserAvatar>
-          </div>
-
-          <div id="talkItem-message">
-            <div className="name_message">
-              <span className="name">Doge</span>
-              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
-            </div>
-            <div className="time_amount">
-              <span className="time">00:24</span>
-              <p className="amount">23</p>
-            </div>
-          </div>
-        </TalkItem>
-
-        <TalkItem className="">
-          <div>
-            <UserAvatar>
-              <Image
-                className="avatar"
-                src={userAvatar}
-                placeholder="empty"
-                layout="fill"
-                priority
-                quality="100"
-              />
-            </UserAvatar>
-          </div>
-
-          <div id="talkItem-message">
-            <div className="name_message">
-              <span className="name">Doge</span>
-              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
-            </div>
-            <div className="time_amount">
-              <span className="time">00:24</span>
-              <p className="amount">23</p>
-            </div>
-          </div>
-        </TalkItem>
-
-        <TalkItem className="">
-          <div>
-            <UserAvatar>
-              <Image
-                className="avatar"
-                src={userAvatar}
-                placeholder="empty"
-                layout="fill"
-                priority
-                quality="100"
-              />
-            </UserAvatar>
-          </div>
-
-          <div id="talkItem-message">
-            <div className="name_message">
-              <span className="name">Doge</span>
-              <p className="message">Bonk aaaaaaaaaaaaaaaaaaaaa</p>
-            </div>
-            <div className="time_amount">
-              <span className="time">00:24</span>
-              <p className="amount">23</p>
-            </div>
-          </div>
-        </TalkItem>
+        {chatsData?.map((chat: string) => (
+          <TalkItem key={chat[1]} userAvatar={userAvatar} chatEmail={chat[1]} />
+        ))}
       </Talks>
     </>
   )
