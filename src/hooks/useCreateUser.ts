@@ -1,15 +1,17 @@
 import { collection, doc, setDoc } from '@firebase/firestore'
-import { currentFirestore, firestore } from '../../services/firebase'
+import { currentFirestore } from '../../services/firebase'
+
+import { FieldValue } from 'firebase/firestore'
 
 interface UsersDataProps {
   email: string | any
   name: string | undefined | null
-  lastSeen?: firestore.FieldValue
+  lastSeen?: FieldValue
   photoURL: string | undefined | null
 }
 const usersCollRef = collection(currentFirestore, 'users')
 
-export default async function useSetUsersData({
+export async function useCreateUser({
   email,
   name,
   lastSeen,

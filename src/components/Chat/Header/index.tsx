@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import * as EmailValidator from 'email-validator'
 import { DotsVerticalIcon, PlusCircledIcon } from '@radix-ui/react-icons'
 
 import { HeaderContainer } from './style-header'
@@ -9,11 +8,6 @@ import pepo from '../../../assets/images/pepo.gif'
 import { ButtonIcon, UserAvatar } from '../../../styles/pages/chat'
 import Router from 'next/router'
 import { User } from '@firebase/auth'
-import useCreateChat from '../../../hooks/useCreateChat'
-import { collection, doc, query, where } from '@firebase/firestore'
-
-import { currentFirestore } from '../../../../services/firebase'
-import { useCollection } from 'react-firebase-hooks/firestore'
 
 interface HeaderProps {
   user?: User | null

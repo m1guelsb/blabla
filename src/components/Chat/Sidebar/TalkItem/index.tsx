@@ -7,14 +7,12 @@ import Image from 'next/image'
 
 interface TalkItemProps {
   userAvatar: string | any
-  chatEmail: string
+  chatName: string
 }
 
-export const TalkItem = ({
-  userAvatar,
-  chatEmail,
-  ...props
-}: TalkItemProps) => {
+export const TalkItem = ({ userAvatar, chatName }: TalkItemProps) => {
+  const chatNameCleaned = chatName?.replace(/@.*$/, '')
+
   return (
     <TalkItemContainer className="selected">
       <div>
@@ -31,7 +29,7 @@ export const TalkItem = ({
       </div>
       <div id="talkItem-message">
         <div className="name_message">
-          <span className="name">{chatEmail.replace(/@.*$/, '')} </span>
+          <span className="name">{chatNameCleaned}</span>
           <p className="message">*message*</p>
         </div>
         <div className="time_amount">

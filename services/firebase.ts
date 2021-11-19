@@ -1,6 +1,11 @@
-import * as app from 'firebase/app'
-import * as auth from 'firebase/auth'
-import * as firestore from 'firebase/firestore'
+import { getApps, initializeApp, getApp } from 'firebase/app'
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut
+} from 'firebase/auth'
+import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -11,15 +16,13 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_APP_ID
 }
 
-const fireApp =
-  app.getApps().length == 0 ? app.initializeApp(firebaseConfig) : app.getApp()
+const fireApp = getApps().length == 0 ? initializeApp(firebaseConfig) : getApp()
 //login - logout
-const fireAuth = auth.getAuth(fireApp)
-const googleProvider = new auth.GoogleAuthProvider()
-const signInWithGooglePopup = () =>
-  auth.signInWithPopup(fireAuth, googleProvider)
-const logout = () => auth.signOut(fireAuth)
+const fireAuth = getAuth(fireApp)
+const googleProvider = new GoogleAuthProvider()
+const signInWithGooglePopup = () => signInWithPopup(fireAuth, googleProvider)
+const logout = () => signOut(fireAuth)
 
-const currentFirestore = firestore.getFirestore(fireApp)
+const currentFirestore = getFirestore(fireApp)
 
-export { fireAuth, logout, signInWithGooglePopup, currentFirestore, firestore }
+export { fireAuth, logout, signInWithGooglePopup, currentFirestore }
